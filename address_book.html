@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Address Book</title>
+  <link rel="stylesheet" href="address.css"> </head>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar__container">
+        <a href="/" id="navbar__logo">OneStop Furniture</a>
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="index.html" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="Payment Method.html" class="navbar__links">Payment details</a>
+            </li>
+            <li class="navbar__item">
+                <a href="Categories.html" class="navbar__links">Products</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+ 
+<div class="main__container">
+  <form  class="form" method="post" action="aInsert.php">
+        <div class="h1"><h1>Address Book </h1></div> 
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="uname"><br><br>
+    
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="Kenya">Kenya</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Somalia">Somalia</option>
+            <option value="Chad">Chad</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Comoros">Comoros</option>
+         </select><br><br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br><br>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="ustate"><br><br>
+        
+        <label for="zip code">Zip Code:</label>
+        <input type="text" id="zip_code" name="zip_code"><br><br>
+        
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="uaddress"><br><br>
+        <input type="submit" class="button" value="Add address" name="btnsubmit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" class="button" value="clear" name="btnreset">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </form>
+    <class class="main__img--container">
+    <img src="address.svg" id="main__img">
+  </class>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.form');
+
+    form.addEventListener('submit', function(event) {
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const country = document.getElementById('country').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zipCode = document.getElementById('zip_code').value;
+        const address = document.getElementById('address').value;
+
+        // Perform basic validation
+        if (name.trim() === '') {
+            alert('Please enter a name.');
+            return;
+        }
+
+        if (country.trim() === '') {
+            alert('Please select a country.');
+            return;
+        }
+
+        if (city.trim() === '') {
+            alert('Please enter a city.');
+            return;
+        }
+        console.log('Name:', name);
+        console.log('Country:', country);
+        console.log('City:', city);
+        console.log('State:', state);
+        console.log('Zip Code:', zipCode);
+        console.log('Address:', address);
+
+        // Clear form fields after submission
+        form.reset();
+    });
+});
+
+</script>
+</body>
+</html>
